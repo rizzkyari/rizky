@@ -1,18 +1,12 @@
-/*!
-=========================================================
-* Dorang Landing page
-=========================================================
+// Fungsi easing untuk efek scroll yang lebih halus
+$.easing.easeInOutQuad = function (x, t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+};
 
-* Copyright: 2019 DevCRUD (https://devcrud.com)
-* Licensed: (https://devcrud.com/licenses)
-* Coded by www.devcrud.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
- // toggle 
+// toggle 
 $(document).ready(function(){
     
     $('.search-toggle').click(function(){
@@ -21,7 +15,7 @@ $(document).ready(function(){
 
     $('.modal-toggle').click(function(){
         $('.modalBox').toggleClass('show');
-    })
+    });
 
     $('.modalBox').click(function(){
         $(this).removeClass('show');
@@ -40,9 +34,7 @@ $(document).ready(function(){
     });
 });
 
-
-
-// smooth scroll
+// smooth scroll untuk navbar dan tombol scroll ke bawah
 $(document).ready(function(){
     $(".navbar .nav-link").on('click', function(event) {
 
@@ -54,9 +46,18 @@ $(document).ready(function(){
 
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
-            }, 700, function(){
+            }, 1500, 'easeInOutQuad', function(){
                 window.location.hash = hash;
             });
         } 
     });
-}); 
+
+    // Tombol scroll ke bawah
+    $('.scroll-down').click(function(event) {
+        event.preventDefault(); // Mencegah aksi default tombol
+        
+        $('html, body').animate({
+            scrollTop: $(document).height() // Scroll ke bawah halaman
+        }, 1500, 'easeInOutQuad'); // Durasi scroll 1500ms dengan easing yang lebih halus
+    });
+});
