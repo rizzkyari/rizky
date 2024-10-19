@@ -11819,3 +11819,45 @@ iframe {
 .carousel-control-next {
   width: 5%; /* Memperlebar area klik */
 }
+.scroll-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Disembunyikan awalnya */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+}
+.gallery-img {
+  width: 80%; /* Menjadikan gambar sedikit lebih kecil dari ukuran kontainer, sesuaikan sesuai kebutuhan */
+  height: auto; /* Tinggi otomatis menyesuaikan dengan proporsi gambar */
+  margin: 0 auto; /* Mengatur gambar agar tetap di tengah */
+  display: block; /* Pastikan gambar adalah elemen blok untuk menyesuaikan ukuran */
+  object-fit: cover; /* Memastikan gambar tetap proporsional */
+}
+/* Tambahkan kotak dengan border untuk Harapan Setelah Lulus */
+.harapan-card, .lessons-card {
+  border: 2px solid #ddd; /* Garis pinggir */
+  border-radius: 10px; /* Sudut melengkung */
+  padding: 20px; /* Spasi di dalam kotak */
+  margin-bottom: 20px; /* Jarak antar kotak */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan kotak */
+}
+
+/* Opsi hover untuk efek saat diarahkan */
+.harapan-card:hover, .lessons-card:hover {
+  border-color: #007bff; /* Ubah warna border saat hover */
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2); /* Bayangan saat hover */
+}
